@@ -4,6 +4,11 @@ module "resource_group" {
    azurerm_resource_group_location           = "West Europe"
 }
 
+module "resource_group" {
+  source = "../Module/Azurerm_resource_group"
+    azurerm_resource_group_name = "rg-Infra-kk"
+   azurerm_resource_group_location           = "West Europe"
+}
 module "vnet" {
     depends_on = [module.resource_group ]
   source = "../Module/Azurerm_vnet"
